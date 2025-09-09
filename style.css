@@ -1,0 +1,135 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  background: #f4f7fa;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 240px;
+  height: 100%;
+  background: linear-gradient(180deg, #ff416c, #ff4b2b); /* sunset gradient */
+  color: #fff;
+  transition: width 0.3s ease, left 0.3s ease;
+  overflow: hidden;
+  box-shadow: 4px 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar.collapsed {
+  width: 70px;
+}
+
+
+.sidebar.collapsed .logo-text {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.menu {
+  list-style: none;
+  margin-top: 20px;
+}
+
+.menu li {
+  margin: 10px 0;
+}
+
+.menu a {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 12px 20px;
+  text-decoration: none;
+  color: #fff3e0; 
+  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  border-radius: 8px;
+  margin: 4px 10px;
+}
+
+.menu a:hover {
+  background: rgba(255, 105, 97, 0.15);
+  color: #ff9f43;
+  transform: translateX(5px);
+  box-shadow: 0 4px 10px rgba(255, 105, 97, 0.4);
+}
+
+.menu i {
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.sidebar.collapsed .menu span {
+  display: none;
+}
+
+.menu a.active {
+  background: rgba(255, 105, 97, 0.25);
+  color: #ffd166;
+  font-weight: 600;
+}
+
+
+.toggle-btn {
+  position: fixed;
+  top: 20px;
+  left: 250px;
+  background: #ff6f61;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: left 0.3s ease, background 0.3s ease;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(255, 105, 97, 0.4);
+}
+
+.toggle-btn:hover {
+  background: #e94e3d;
+}
+
+.sidebar.collapsed ~ .toggle-btn {
+  left: 90px;
+}
+
+
+.content {
+  flex: 1;
+  margin-left: 240px;
+  padding: 30px;
+  transition: margin-left 0.3s ease;
+}
+
+.sidebar.collapsed ~ .content {
+  margin-left: 70px;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    left: -240px;
+  }
+  .sidebar.active {
+    left: 0;
+    z-index: 1100;
+  }
+  .toggle-btn {
+    left: 20px !important;
+  }
+  .sidebar.active ~ .toggle-btn {
+    left: 260px !important;
+  }
+  .content {
+    margin-left: 0;
+  }
+}
