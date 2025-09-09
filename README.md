@@ -14,3 +14,7 @@ A modern and lightweight collapsible sidebar UI component ideal for dashboards, 
 • CSS3 (Flexbox & Media Queries)
 • JavaScript (Vanilla)
 • FontAwesome for icons 
+## Demo / Screenshot
+![Desktop View](desktop.png)  
+![Mobile View](mobile.png)
+
