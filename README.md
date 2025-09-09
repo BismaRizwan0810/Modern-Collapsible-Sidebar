@@ -15,6 +15,6 @@ A modern and lightweight collapsible sidebar UI component ideal for dashboards, 
 • JavaScript (Vanilla)
 • FontAwesome for icons 
 ## Demo / Screenshot
-![Desktop View](desktop.png)  
+![Desktop View](desktop.PNG)  
 ![Mobile View](mobile.png)
 
